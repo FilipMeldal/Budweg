@@ -7,7 +7,7 @@ namespace Dashboard
 {
     public abstract class DatabaseConnector
     {
-        protected string connectionString;
+        protected readonly string connectionString;
 
         public DatabaseConnector()
         {
