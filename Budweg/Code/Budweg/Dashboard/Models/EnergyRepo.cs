@@ -2,21 +2,18 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Data.SqlClient;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Configuration.Json;
+using Microsoft.Data.SqlClient;
+
 
 
 
 namespace Dashboard.Models
 {
-    public class EnergyRepo
+    public class EnergyRepo : DatabaseConnector
     {
         private EnergyUse energyuse;
-        private string connectionString = config.GetConnectionString("Navn af json db fil");
-
-
-        public void EnergyAdd(EnergyUse energy)
-        {
-
-        }
 
 
         public List<EnergyUse> EnergyGetAll()
@@ -30,7 +27,7 @@ namespace Dashboard.Models
                 SqlCommand command = new SqlCommand(query, connection);
                 try
                 {
-                    SqlDataReader reader = command.ExectuteReader();
+                    SqlDataReader reader = command.ExecuteReader();
                     while (reader.Read())
                     {
                         EnergyUse energy = new EnergyUse
@@ -43,26 +40,51 @@ namespace Dashboard.Models
                 }
                 catch (Exception ex)
                 {
-                    throw new Exception($"Der var fejl ved hentelse af energidata{ex.Message}", ex);
-
-
-
+                    throw new Exception($"There was an error retrieving Energydata{ex.Message}", ex);
                 }
                 return energyList;
             }
         }
 
-        public EnergyRemove(EnergyUse energy)
-        {
-
-        }
+     
 
         public EnergyUse EnergyGetById(int id)
         {
+            EnergyUse energy = null;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                string query = @"SELECT e.Id, e.Watt, e.BrakeCaliperFk 
+                                 FROM EnergyUse e 
+                                 INNER JOIN BrakeCaliper b ON e.BrakeCaliperFk = b.Id 
+                                 WHERE e.Id = @Id";
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@Id", id);
+                try
+                {
+                    SqlDataReader reader = command.ExecuteReader();
+                    if (reader.Read())
+                    {
+                        energy = new EnergyUse
+                        {
+                            Id = reader.GetInt32(0),
+                            Watt = reader.GetDouble(1),
+                            BrakeCaliperFk = reader.IsDBNull(2) ? null : reader.GetInt32(2)
+                        };
+                    }
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    throw new Exception($"There was an error retrieving Energydata by Id{ex.Message}", ex);
+                }
+                return energy;
+            }
 
         }
 
     }
 }
+
 
 
