@@ -23,7 +23,7 @@ namespace Dashboard.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT Watt FROM EnergyUse";
+                string query = "SELECT Watt FROM ENERGYUSE";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 try
                 {
@@ -55,8 +55,8 @@ namespace Dashboard.Models
             {
                 connection.Open();
                 string query = @"SELECT e.EnergyID, e.Watt, e.CaliperIDFk 
-                                 FROM EnergyUse e 
-                                 INNER JOIN BrakeCaliper b ON e.CaliperIDFk = b.CaliperID 
+                                 FROM ENERGYUSE e 
+                                 INNER JOIN BRAKECALIPER b ON e.CaliperIDFk = b.CaliperID 
                                  WHERE e.EnergyID = @Id";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@Id", id);

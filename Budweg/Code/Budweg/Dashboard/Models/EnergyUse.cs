@@ -9,6 +9,6 @@ namespace Dashboard.Models
         public int EnergyId { get; set; }
         public double Watt { get; set; }
         public int? CaliperIDFk { get; set; }
-        public int? inspectionID { get; set; }
+        public int? InspectionID { get; set; }
     }
 }
