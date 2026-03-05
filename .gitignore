@@ -416,4 +416,6 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
-/Budweg/Code/Budweg/Dashboard/Models/Inspection.cs
+
+# Custom exclutions
+appsettings.json
