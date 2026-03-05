@@ -1,0 +1,29 @@
+@startuml
+hide empty method
+Title <u>UC1 SSD - Opret mål
+
+actor ": Ledelsen" as L
+participant ": System" as S
+
+L -> S: VisDashboard()
+S --> L: System viser oversigt over bæredygtighedsdata
+
+L -> S: VælgSætMål()
+S --> L: System viser formular for mål
+
+L -> S: IndtastMål(datatype, målværdi, måldato)
+note right
+datatype: valgt bæredygtighedsdata
+måldato: specifik dato for målet
+end note
+
+
+S --> L: VisOpdateretOversigt(datatype, målværdi, nuværendeData, fremdrift)
+note right
+Målet vises i oversigten,
+og fremdrift mod målet vises
+end note
+
+hide footbox
+
+@enduml
