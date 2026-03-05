@@ -14,11 +14,11 @@ namespace Dashboard.Models
 
         }
 
-        public List<Inspection> inspecGetAll()
+        public List<Inspection> InspecGetAll()
         {
 
         }
-        public void inspecRemove(Inspection inspection)
+        public void InspecRemove(Inspection inspection)
         {
 
         }
