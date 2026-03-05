@@ -24,10 +24,10 @@ namespace Dashboard.Models
             {
                 connection.Open();
                 string query = "SELECT Watt FROM EnergyUse";
-                SqlCommand command = new SqlCommand(query, connection);
+                SqlCommand cmd = new SqlCommand(query, connection);
                 try
                 {
-                    SqlDataReader reader = command.ExecuteReader();
+                    SqlDataReader reader = cmd.ExecuteReader();
                     while (reader.Read())
                     {
                         EnergyUse energy = new EnergyUse
@@ -58,11 +58,11 @@ namespace Dashboard.Models
                                  FROM EnergyUse e 
                                  INNER JOIN BrakeCaliper b ON e.BrakeCaliperFk = b.Id 
                                  WHERE e.Id = @Id";
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@Id", id);
+                SqlCommand cmd = new SqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@Id", id);
                 try
                 {
-                    SqlDataReader reader = command.ExecuteReader();
+                    SqlDataReader reader = cmd.ExecuteReader();
                     if (reader.Read())
                     {
                         energy = new EnergyUse
