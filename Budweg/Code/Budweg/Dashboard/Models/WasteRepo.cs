@@ -22,7 +22,7 @@ namespace Dashboard.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT WasteAmount, Material FROM Waste";
+                string query = "SELECT WasteAmount, Material FROM WASTE";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 try
                 {
@@ -53,8 +53,8 @@ namespace Dashboard.Models
             {
                 connection.Open();
                 string query = @"SELECT w.WasteID, w.WasteAmount, w.Material, w.CaliperID 
-                                 FROM Waste w 
-                                 INNER JOIN BrakeCaliper b ON w.CaliperID = b.CaliperID 
+                                 FROM WASTE w 
+                                 INNER JOIN BRAKECALIPER b ON w.CaliperID = b.CaliperID 
                                  WHERE w.WasteID = @WasteID";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@WasteID", id);
