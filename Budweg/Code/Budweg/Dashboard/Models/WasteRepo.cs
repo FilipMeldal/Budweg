@@ -9,26 +9,26 @@ namespace Dashboard.Models
         private Waste waste;
 
 
-        //public void WasteAdd(Waste waste)
-        //{
+        public void WasteAdd(Waste waste)
+        {
 
-        //}
+        }
 
-        //public List<Waste>WasteGetAll()
-        //{
+        public List<Waste> WasteGetAll()
+        {
 
-        //}
+        }
 
 
-        //public WasteRemove(Waste waste)
-        //{
+        public WasteRemove(Waste waste)
+        {
 
-        //}
+        }
 
-        //public Waste WasteGetById(int id)
-        //{
+        public Waste WasteGetById(int id)
+        {
 
-        //}
+        }
 
 
 

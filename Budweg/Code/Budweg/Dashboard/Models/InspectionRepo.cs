@@ -9,24 +9,24 @@ namespace Dashboard.Models
         private Inspection inspection;
 
 
-        //public void InspecAdd(Inspection inspec)
-        //{
+        public void InspecAdd(Inspection inspec)
+        {
 
-        //}
+        }
 
-        //public List<Inspection> inspecGetAll()
-        //{
+        public List<Inspection> inspecGetAll()
+        {
 
-        //}
-        //public void inspecRemove(Inspection inspection)
-        //{
+        }
+        public void inspecRemove(Inspection inspection)
+        {
 
-        //}
-        
-        //public Inspection InspecGetById(int id)
-        //{
+        }
 
-        //}
+        public Inspection InspecGetById(int id)
+        {
+
+        }
 
     }
 }
