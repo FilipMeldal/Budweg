@@ -67,7 +67,7 @@ namespace Dashboard.Models
                     {
                         energy = new EnergyUse
                         {
-                            EnergyId = reader.GetInt32(0),
+                            EnergyID = reader.GetInt32(0),
                             Watt = reader.GetDouble(1),
                             CaliperIDFk = reader.IsDBNull(2) ? null : reader.GetInt32(2)
                         };
