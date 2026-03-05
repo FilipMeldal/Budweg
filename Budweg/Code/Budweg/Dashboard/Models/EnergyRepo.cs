@@ -6,28 +6,28 @@ namespace Dashboard.Models
 {
     public class EnergyRepo
     {
-        private EnergyUse energyuse;
+        //private EnergyUse energyuse;
 
-        public void EnergyAdd(EnergyUse energy)
-        {
+        //public void EnergyAdd(EnergyUse energy)
+        //{
 
-        }
+        //}
 
 
-        public List<EnergyUse> EnergyGetAll()
-        {
+        //public List<EnergyUse> EnergyGetAll()
+        //{
 
-        }
+        //}
 
-        public EnergyRemove(EnergyUse energy)
-        {
+        //public EnergyRemove(EnergyUse energy)
+        //{
 
-        }
+        //}
 
-        public EnergyUse EnergyGetById(int id)
-        {
+        //public EnergyUse EnergyGetById(int id)
+        //{
 
-        }
+        //}
 
     }
 }

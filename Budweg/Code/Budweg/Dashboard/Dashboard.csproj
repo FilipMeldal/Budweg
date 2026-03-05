@@ -8,4 +8,18 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Images\BudwegIcon.jpeg" />
+    <None Remove="Images\Budweg_Logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-rc6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Images\BudwegIcon.jpeg" />
+    <Resource Include="Images\Budweg_Logo.png" />
+  </ItemGroup>
+
 </Project>
