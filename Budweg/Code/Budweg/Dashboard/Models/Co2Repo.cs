@@ -13,7 +13,7 @@ namespace Dashboard.Models
 
         }
 
-        public List<Co2Emission>Co2GetAll()
+        public List<Co2Emission> Co2GetAll()
         {
 
         }
