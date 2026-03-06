@@ -6,6 +6,7 @@ namespace Dashboard.Models
 {
     public class BrakeCaliperRepo
     {
+        /*
         private BrakeCaliper bc;
 
         public void BcAdd(BrakeCaliper brakecaliper)
@@ -26,6 +27,6 @@ namespace Dashboard.Models
         public BrakeCaliper BcGetById(int id)
         {
 
-        }
+        }*/
     }
 }
