@@ -4,6 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dashboard"
+        xmlns:sys="clr-namespace:System;assembly=System.Runtime"
+        xmlns:models="clr-namespace:Dashboard.Models"
         mc:Ignorable="d"
         Title="Budweg Dashboard" Height="600" Width="800" MinWidth="700" MinHeight="500"
         WindowState="Maximized">
@@ -24,7 +26,16 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <ObjectDataProvider x:Key="EnumDataSource"
+                        ObjectType="{x:Type sys:Enum}"
+                        MethodName="GetValues">
+
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="models:TimeInterval"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
     </Window.Resources>
+
 
     <!--Her definere alle grids så vi kan smide vores ting in rows, så det kan sættes pænt op-->
     <Grid Margin="10">
@@ -59,9 +70,9 @@
                         <RowDefinition Height="Auto"/>
                         <RowDefinition Height="*"/>
                     </Grid.RowDefinitions>
-                    
+
                     <Button Grid.Column="0" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" Background="White" Cursor="Hand"/>
-                    <ComboBox Grid.Column="0" Width="120" Grid.RowSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
+                    <ComboBox Grid.Column="0" Width="120" Grid.RowSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Right" ItemsSource="{Binding Source={StaticResource EnumDataSource}}"/>
                     <TextBlock Grid.Column="0" Text="☁️ CO₂ Emission" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
                 </Grid>
 
