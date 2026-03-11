@@ -5,8 +5,110 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dashboard"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="Budweg Dashboard" Height="600" Width="800" MinWidth="700" MinHeight="500"
+        WindowState="Maximized">
 
+    <!--Vi bruger Styles her til at lave rounded corners på knappen, inde i stylen laver vi en border, som endligt får rounded corner men bliver sat på knappen-->
+    <Window.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="6" 
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <!--Her definere alle grids så vi kan smide vores ting in rows, så det kan sættes pænt op-->
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="120"/>
+        </Grid.RowDefinitions>
+
+        <!--Header-->
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Image Source="/Images/Budweg_Logo.png"
+            HorizontalAlignment="Left" 
+            Height="50"/>
+        </Grid>
+
+        <!--Her definere vi de 2 første grids-->
+        <Grid Grid.Row="1" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
+                <Grid Grid.Column="0" Margin="10,10,10,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <Button Grid.Column="0" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" Background="White" Cursor="Hand"/>
+                    <ComboBox Grid.Column="0" Width="120" Grid.RowSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Column="0" Text="☁️ CO₂ Emission" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                </Grid>
+
+            </Border>
+
+            <Border Grid.Column="1" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
+                <Grid Grid.Column="1" Margin="10,10,10,10">
+
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!--Her bliver de 2 næste rows oprettet så vi kan smide info ind i dem-->
+        <Grid Grid.Row="2" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Border Grid.Column="0" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
+                <Grid Grid.Column="0" Margin="10,10,10,10">
+
+                </Grid>
+            </Border>
+            <Border Grid.Column="1" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" CornerRadius="4" Background="White">
+                <Grid Grid.Column="1" Margin="10,10,10,10">
+
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!--Det sidste grid bliver brugt til at sætte knappen i-->
+        <Grid Grid.Row="3" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Content="Create Milestone"
+                    Height="75"
+                    Width="150"
+                    Margin="0,25,0,0"
+                    Cursor="Hand"
+                    Background="DarkGreen"
+                    Foreground="White"
+                    FontWeight="Bold"
+                    HorizontalAlignment="Center">
+            </Button>
+        </Grid>
     </Grid>
 </Window>
+        

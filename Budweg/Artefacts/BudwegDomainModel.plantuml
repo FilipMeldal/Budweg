@@ -39,8 +39,9 @@ Class Inspektion
 {
     oprettelsesDato
     inspektør
-    mål
+    milepæl
     målDato
+    målOpnået
 }
 
 @enduml

@@ -19,6 +19,7 @@ namespace Dashboard
         public MainWindow()
         {
             InitializeComponent();
+            
         }
     }
 }
