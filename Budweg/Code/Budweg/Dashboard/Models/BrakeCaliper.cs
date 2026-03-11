@@ -7,6 +7,7 @@ namespace Dashboard.Models
 {
     public class BrakeCaliper
     {
+        public int CaliperID { get; set; }
         public double Weight { get; set; }
 
         public string RawMaterial { get; set; }
