@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dashboard"
         mc:Ignorable="d"
-        Title="Budweg Dashboard" Height="600" Width="800"
+        Title="Budweg Dashboard" Height="600" Width="800" MinWidth="700" MinHeight="500"
         WindowState="Maximized">
 
     <!--Vi bruger Styles her til at lave rounded corners på knappen, inde i stylen laver vi en border, som endligt får rounded corner men bliver sat på knappen-->
@@ -61,8 +61,8 @@
                     </Grid.RowDefinitions>
                     
                     <Button Grid.Column="0" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" Background="White" Cursor="Hand"/>
-                    <TextBlock Text="☁️ CO₂ Emission" FontSize="18" Margin="16,5,16,128"/>
-                    <ComboBox Width="120" Margin="233,5,5,128" Grid.RowSpan="1" Grid.Row="0"/>
+                    <ComboBox Grid.Column="0" Width="120" Grid.RowSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
+                    <TextBlock Grid.Column="0" Text="☁️ CO₂ Emission" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
                 </Grid>
 
             </Border>
