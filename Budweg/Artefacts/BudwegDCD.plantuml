@@ -109,8 +109,6 @@ Class EnergyRepo
     -energyUse : EnergyUse
     __
     +EnergyAdd(energy : EnergyUse)
-    +EnergyGetAll() : List<EnergyUse>
-    +EnergyRemove(energy : EnergyUse)
     +EnergyGetById(id : int) : Energyuse
 }
 
