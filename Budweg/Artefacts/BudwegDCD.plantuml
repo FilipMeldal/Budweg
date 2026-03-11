@@ -1,16 +1,35 @@
 @startuml
 hide circle
 skinparam classAttributeIconSize 0
-
-Co2Emission  <--  BrakeCaliber
-Waste      <--  BrakeCaliber
-EnergyUse  <--  BrakeCaliber
-Inspection  <-->  Co2Emission
-Inspection  <-->  Waste
-Inspection  <-->  EnergyUse
+left to right direction
 
 
-Class BrakeCaliber
+Package ViewModel
+{
+
+Class Controller
+{
+-energyRepo : EnergyRepo
+-wasteRepo : WasteRepo
+-co2Repo : Co2Repo
+..
++GetAllWaste() : List<Waste>
++GetSpecificWaste(wasteId : int) : Waste
++GetAllEnergy() : List<EnergyUse>
++GetSpecificWaste(energyId : int) : EnergyUse
++GetAllCo2() : List<Co2Discharge>
++GetSpecificWaste(co2Id : int) : Co2Discharge
+
+}
+}
+
+
+
+
+Package Models
+{
+
+Class BrakeCaliper
 {
     +Weight : double
     +RawMaterial : string
@@ -21,6 +40,7 @@ Class BrakeCaliber
 
 Class Co2Emission 
 {
+    -EnergyUse : double
     +Emission : double
 }
 
@@ -45,19 +65,19 @@ Class Inspection
 
 Class BrakeCaliberRepo
 {
-    -bc : BrakeCaliber
+    -bc : BrakeCaliper
     __
-    +bcAdd(brakeCaliber : Brakecaliber)
-    +bcGetAll() : List<BrakeCaliber>
-    +bcRemove(brakeCaliber : Brakecaliber)   
-    +bcGetById(id: int) : BrakeCaliber
+    +BcAdd(brakeCaliper : Brakecaliper)
+    +BcGetAll() : List<BrakeCaliper>
+    +BcRemove(brakeCaliper : Brakecaliper)   
+    +BcGetById(id: int) : BrakeCaliper
 }
 
 Class InspectionRepo
 { 
     -inspection : Inspection
     __
-    +inspecAdd(inspec : Inspection)
+    +inspecAdd(inspection : Inspection)
     +inspecGetAll() : List<Inspection>
     +inspecRemove(inspection : Inspection)
     +InspecGetById(id : int) : Inspection
@@ -94,22 +114,25 @@ Class EnergyRepo
     +EnergyGetById(id : int) : Energyuse
 }
 
-
-
-
-Class Controller
-{
--energyRepo : EnergyRepo
--wasteRepo : WasteRepo
--co2Repo : Co2Repo
-..
-+GetAllWaste() : List<Waste>
-+GetSpecificWaste(wasteId : int) : Waste
-+GetAllEnergy() : List<EnergyUse>
-+GetSpecificWaste(energyId : int) : EnergyUse
-+GetAllCo2() : List<Co2Discharge>
-+GetSpecificWaste(co2Id : int) : Co2Discharge
-
 }
+
+
+Co2Emission  <--  BrakeCaliper
+Co2Emission --> EnergyUse
+Waste      <--  BrakeCaliper
+EnergyUse  <--  BrakeCaliper
+Inspection  -->  Co2Emission
+Inspection  -->  Waste
+Inspection  -->  EnergyUse
+BrakeCaliberRepo --> BrakeCaliper
+InspectionRepo --> Inspection
+WasteRepo --> Waste
+EnergyRepo --> EnergyUse
+Co2Repo --> Co2Emission
+Controller -->EnergyRepo
+Controller -->WasteRepo
+Controller -->Co2Repo
+
+
 
 @enduml
