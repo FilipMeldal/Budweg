@@ -10,8 +10,8 @@
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
-    <PackageReference Include="Microsoft.Extensions.Configuration" Version="10.0.3" />
-    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="10.0.3" />
+    <PackageReference Include="Microsoft.Extensions.connectionfiguration" Version="10.0.3" />
+    <PackageReference Include="Microsoft.Extensions.connectionfiguration.Json" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup>
