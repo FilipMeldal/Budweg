@@ -20,14 +20,14 @@ namespace Dashboard.Models
 
         public void InspecAdd(Inspection inspection)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                con.Open();
+                connection.Open();
 
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Inspection " +
                     "(Date, Milestone, MilestoneReached, Inspector " +
                     "VALUES (@Date, @Milestone, @MilestoneReached, @Inspector " +
-                    "SELECT @@IDENTITY", con))
+                    "SELECT @@IDENTITY", connection))
                 {
                     cmd.Parameters.Add("@Date", SqlDbType.NVarChar).Value = DateTime.Now;
                     cmd.Parameters.Add("@Milestone", SqlDbType.NVarChar).Value = inspection.Milestone;
@@ -44,11 +44,11 @@ namespace Dashboard.Models
         {
             List<Inspection> inspections = new List<Inspection>();
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                con.Open();
+                connection.Open();
 
-                SqlCommand cmd = new SqlCommand("SELECT * FROM Inspection", con);
+                SqlCommand cmd = new SqlCommand("SELECT * FROM Inspection", connection);
 
                 using (SqlDataReader reader = cmd.ExecuteReader())
                 {
@@ -73,12 +73,12 @@ namespace Dashboard.Models
         {
             Inspection? inspection = null;
 
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                con.Open();
+                connection.Open();
 
                 SqlCommand cmd = new SqlCommand("SELECT * " +
-                    "FROM Inspection WHERE Id = @Id", con);
+                    "FROM Inspection WHERE Id = @Id", connection);
 
                 cmd.Parameters.AddWithValue("@Id", id);
 
@@ -102,11 +102,11 @@ namespace Dashboard.Models
 
         public void InspecRemove(int id)
         {
-            using (SqlConnection con = new SqlConnection(connectionString))
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                con.Open();
+                connection.Open();
 
-                SqlCommand cmd = new SqlCommand("DELETE FROM Inspection WHERE Id = @Id", con);
+                SqlCommand cmd = new SqlCommand("DELETE FROM Inspection WHERE Id = @Id", connection);
 
                 cmd.Parameters.AddWithValue("@Id", id);
 
