@@ -106,7 +106,7 @@
                     Background="DarkGreen"
                     Foreground="White"
                     FontWeight="Bold"
-                    HorizontalAlignment="Center">
+                    HorizontalAlignment="Center" Click="CreateInspectionDialog_Click">
             </Button>
         </Grid>
     </Grid>

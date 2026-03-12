@@ -6,5 +6,6 @@ namespace Dashboard.Models
 {
     public class Co2Emission
     {
+        public double Weight {  get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Dashboard.ViewModels;
-using Dashboard.Views;
+using System;
+using System.Collections.Generic;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -8,27 +9,28 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Dashboard
+namespace Dashboard.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for CreateNewInspection.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CreateNewInspection : Window
     {
         MainViewModel mvm;
-        public MainWindow()
+        public CreateNewInspection()
         {
-            mvm = new MainViewModel();
             InitializeComponent();
+            mvm = new MainViewModel();
             DataContext = mvm;
         }
 
-        private void CreateInspectionDialog_Click(object sender, RoutedEventArgs e)
+      
+
+        private void SaveInspection_Click(object sender, RoutedEventArgs e)
         {
-            
+            DialogResult = true;
         }
     }
 }
