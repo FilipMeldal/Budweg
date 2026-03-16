@@ -136,15 +136,14 @@
 
 					<Button Grid.Column="0" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" Background="White" Cursor="Hand"/>
 					<ComboBox Grid.Column="0" Width="120" Grid.RowSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
-                    <TextBlock Grid.Column="0" Text="🔎 Inspection" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Column="0" Text="🔧 BrakeCalieper" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
                     
                     <DataGrid Name="Inspection" ItemsSource="{Binding}" Grid.Row="1" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" Height="auto">
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="DateOfCreation" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Inspector" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="Milestone" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="MilestoneReached" Width="*" Binding="{Binding}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Weight" Width="*" Binding="{Binding}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="RawMaterial" Width="*" Binding="{Binding}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Component" Width="*" Binding="{Binding}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
@@ -157,7 +156,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="Create Milestone"
+            <Button Content="Create Inspection"
                     Height="75"
                     Width="150"
                     Margin="0,25,0,0"
@@ -165,7 +164,9 @@
                     Background="DarkGreen"
                     Foreground="White"
                     FontWeight="Bold"
-                    HorizontalAlignment="Center" Click="CreateInspectionDialog_Click">
+                    HorizontalAlignment="Center" Click="CreateInspectionDialog_Click"
+                    Command="{Binding CreateInspectionCommand}"
+                    CommandParameter="{Binding}">
             </Button>
         </Grid>
     </Grid>
