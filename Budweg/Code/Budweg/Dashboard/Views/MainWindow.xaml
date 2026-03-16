@@ -72,8 +72,6 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Width="*" Binding="{Binding}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Emission" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BrakeCaliperID" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="InspectionID" Width="*" Binding="{Binding}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                     
@@ -109,8 +107,6 @@
                         <DataGrid.Columns>
                             <DataGridTextColumn Header="ID" Width="*" Binding="{Binding}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Watt" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BrakeCaliperID" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="InspectionID" Width="*" Binding="{Binding}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                     
@@ -153,8 +149,6 @@
                             <DataGridTextColumn Header="ID" Width="*" Binding="{Binding}"></DataGridTextColumn>
                             <DataGridTextColumn Header="WasteAmount" Width="*" Binding="{Binding}"></DataGridTextColumn>
                             <DataGridTextColumn Header="Material" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="BrakeCaliperID" Width="*" Binding="{Binding}"></DataGridTextColumn>
-                            <DataGridTextColumn Header="InspectionID" Width="*" Binding="{Binding}"></DataGridTextColumn>
                         </DataGrid.Columns>
                     </DataGrid>
                     
