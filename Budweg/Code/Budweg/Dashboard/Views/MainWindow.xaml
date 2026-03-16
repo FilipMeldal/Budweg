@@ -136,7 +136,7 @@
 
 					<Button Grid.Column="0" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" Background="White" Cursor="Hand"/>
 					<ComboBox Grid.Column="0" Width="120" Grid.RowSpan="1" VerticalAlignment="Stretch" HorizontalAlignment="Right"/>
-                    <TextBlock Grid.Column="0" Text="🔧 BrakeCalieper" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
+                    <TextBlock Grid.Column="0" Text="🔧 BrakeCaliper" FontSize="18" VerticalAlignment="Stretch" HorizontalAlignment="Left"/>
                     
                     <DataGrid Name="Inspection" ItemsSource="{Binding}" Grid.Row="1" Margin="5,5,5,5" BorderBrush="Black" BorderThickness="1" Height="auto">
                         <DataGrid.Columns>
