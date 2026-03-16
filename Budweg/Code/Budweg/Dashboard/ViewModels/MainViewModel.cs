@@ -1,25 +1,27 @@
 ﻿using Dashboard.Models;
+using Dashboard.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Text;
+using System.Text.RegularExpressions;
 
 namespace Dashboard.ViewModels
 {
-    public class MainViewModel 
+    public class MainViewModel : BaseViewModel
     {
-        //private EnergyRepo _energyRepo;
-        //private WasteRepo _wasteRepo;
-        //private BrakeCaliperRepo _brakeRepo;
-        
+        private readonly NavigationStore _navigationStore;
+        public BaseViewModel CurrentViewModel { get => _navigationStore.CurrentViewModel; }
 
-        public ObservableCollection<InspectionViewModel> InspectionVM;
-        public ObservableCollection<Co2ViewModel> Co2VM;
-        private Co2Repo _co2Repo;
-        private InspectionRepo _inspectionRepo;
+        public MainViewModel(NavigationStore navigationStore)
+        {
+            _navigationStore = navigationStore;
+            _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+        }
 
-
-
-
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
     }
 }
