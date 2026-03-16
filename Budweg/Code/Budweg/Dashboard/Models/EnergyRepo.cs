@@ -23,7 +23,7 @@ namespace Dashboard.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT Watt FROM ENERGYUSE";
+                string query = "SELECT * FROM ENERGYUSE";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 try
                 {
@@ -32,7 +32,8 @@ namespace Dashboard.Models
                     {
                         EnergyUse energy = new EnergyUse
                         {
-                            Watt = reader.GetDouble(0)
+                            Watt = reader.GetDouble(0),
+                            ID = reader.GetInt32(2)
                         };
                         energyList.Add(energy);
                     }
@@ -54,10 +55,10 @@ namespace Dashboard.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = @"SELECT e.EnergyID, e.Watt, e.CaliperIDFk 
+                string query = @"SELECT e.ID, e.Watt, e.BrakeCaliperID 
                                  FROM ENERGYUSE e 
-                                 INNER JOIN BRAKECALIPER b ON e.CaliperIDFk = b.CaliperID 
-                                 WHERE e.EnergyID = @Id";
+                                 INNER JOIN BRAKECALIPER b ON e.BrakeCaliperID = b.BrakeCaliperID 
+                                 WHERE e.ID = @Id";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 cmd.Parameters.AddWithValue("@Id", id);
                 try
@@ -67,9 +68,9 @@ namespace Dashboard.Models
                     {
                         energy = new EnergyUse
                         {
-                            EnergyID = reader.GetInt32(0),
+                            ID = reader.GetInt32(0),
                             Watt = reader.GetDouble(1),
-                            CaliperIDFk = reader.IsDBNull(2) ? null : reader.GetInt32(2)
+                            BrakeCaliperID = reader.IsDBNull(2) ? null : reader.GetInt32(2)
                         };
                     }
                     reader.Close();

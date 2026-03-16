@@ -22,7 +22,7 @@ namespace Dashboard.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = "SELECT WasteAmount, Material FROM WASTE";
+                string query = "SELECT * FROM WASTE";
                 SqlCommand cmd = new SqlCommand(query, connection);
                 try
                 {
@@ -33,6 +33,7 @@ namespace Dashboard.Models
                         {
                             WasteAmount = reader.GetDouble(0),
                             Material = reader.GetString(1),
+                            ID = reader.GetInt32(2),
                         };
                         wasteList.Add(waste);
                     }
@@ -52,12 +53,12 @@ namespace Dashboard.Models
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 connection.Open();
-                string query = @"SELECT w.WasteID, w.WasteAmount, w.Material, w.CaliperID 
+                string query = @"SELECT w.ID, w.WasteAmount, w.Material, w.BrakeCaliperID 
                                  FROM WASTE w 
-                                 INNER JOIN BRAKECALIPER b ON w.CaliperID = b.CaliperID 
-                                 WHERE w.WasteID = @WasteID";
+                                 INNER JOIN BRAKECALIPER b ON w.BrakeCaliperID = b.BrakeCaliperID 
+                                 WHERE w.ID = @ID";
                 SqlCommand cmd = new SqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@WasteID", id);
+                cmd.Parameters.AddWithValue("@ID", id);
                 try
                 {
                     SqlDataReader reader = cmd.ExecuteReader();
@@ -65,10 +66,10 @@ namespace Dashboard.Models
                     {
                         waste = new Waste
                         {
-                            WasteID = reader.GetInt32(0),
+                            ID = reader.GetInt32(0),
                             WasteAmount = reader.GetDouble(1),
                             Material = reader.GetString(2),
-                            CaliperID = reader.IsDBNull(3) ? null : reader.GetInt32(3)
+                            BrakeCaliperID = reader.IsDBNull(3) ? null : reader.GetInt32(3)
                         };
                     }
                     reader.Close();
