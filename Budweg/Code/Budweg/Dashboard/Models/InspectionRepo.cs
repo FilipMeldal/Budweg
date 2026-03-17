@@ -28,8 +28,8 @@ namespace Dashboard.Models
                 connection.Open();
 
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Inspection " +
-                    "(Date, Milestone, MilestoneReached, Inspector " +
-                    "VALUES (@Date, @Milestone, @MilestoneReached, @Inspector " +
+                    "(Date, Milestone, MilestoneReached, Inspector)" +
+                    "VALUES (@Date, @Milestone, @MilestoneReached, @Inspector) " +
                     "SELECT @@IDENTITY", connection))
                 {
                     cmd.Parameters.Add("@Date", SqlDbType.NVarChar).Value = DateTime.Now;

@@ -22,8 +22,6 @@ namespace Dashboard.Views
         public CreateNewInspection()
         {
             InitializeComponent();
-            mvm = new MainViewModel();
-            DataContext = mvm;
         }
 
       

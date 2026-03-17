@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Dashboard.Views"
         mc:Ignorable="d"
-        Title="CreateNewInspection" Height="600" Width="600" >
+        Title="CreateNewInspection" Height="880" Width="600" >
     
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel  Margin="20" Orientation="Vertical" >

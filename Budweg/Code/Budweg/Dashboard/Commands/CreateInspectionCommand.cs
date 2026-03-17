@@ -1,4 +1,4 @@
-﻿using Dashboard.ViewModels;
+﻿using Dashboard.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,6 +8,7 @@ namespace Dashboard.Commands
 {
     public class CreateInspectionCommand : ICommand
     {
+
         public event EventHandler? CanExecuteChanged;
 
         public bool CanExecute(object? parameter)
@@ -17,10 +18,8 @@ namespace Dashboard.Commands
 
         public void Execute(object? parameter)
         {
-            if(parameter is MainViewModel mvm)
-            {
-                //mvm.AddInspection();
-            }
+            CreateNewInspection createNewInspection = new CreateNewInspection();
+            createNewInspection.Show();
         }
     }
 }

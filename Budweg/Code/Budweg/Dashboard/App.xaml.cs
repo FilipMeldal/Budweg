@@ -1,5 +1,6 @@
 ﻿using Dashboard.Stores;
 using Dashboard.ViewModels;
+using Dashboard.Views;
 using System.Configuration;
 using System.Data;
 using System.Windows;
@@ -23,6 +24,7 @@ namespace Dashboard
                 DataContext = new MainViewModel(navigationStore)
             };
             MainWindow.Show();
+
         }
     }
 
