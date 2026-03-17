@@ -14,11 +14,23 @@ namespace Dashboard.ViewModels
         private readonly NavigationStore _navigationStore;
         public ICommand SaveInspectionCommand { get; }
 
+        private Inspection _inspection;
+
+        public Inspection Inspection
+        {
+            get { return _inspection; }
+            set
+            {
+                _inspection = value;
+                OnPropertyChanged(nameof(Inspection));
+            }
+        }
+
         public CreateNewInspectionViewModel(NavigationStore navigationStore)
         {
             _navigationStore = navigationStore;
+            Inspection = new Inspection();
             SaveInspectionCommand = new SaveInspectionCommand();
-
         }
     }
 }

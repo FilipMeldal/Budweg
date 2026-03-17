@@ -12,13 +12,10 @@ namespace Dashboard.ViewModels
     {
         private readonly NavigationStore _navigationStore;
         public ICommand CreateInspectionCommand { get; }
-        public ICommand NavigateToInspectionCommand { get; }
 
         public DashBoardViewModel(NavigationStore navigationStore)
         {
-            _navigationStore = navigationStore;
             CreateInspectionCommand = new CreateInspectionCommand();
-            NavigateToInspectionCommand = new NavigateCommand(new NavigationService(navigationStore, () => new CreateNewInspectionViewModel(navigationStore)));
         }
     }
 }

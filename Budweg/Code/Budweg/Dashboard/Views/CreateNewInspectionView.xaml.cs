@@ -16,19 +16,11 @@ namespace Dashboard.Views
     /// <summary>
     /// Interaction logic for CreateNewInspection.xaml
     /// </summary>
-    public partial class CreateNewInspection : Window
+    public partial class CreateNewInspectionView : Window
     {
-        MainViewModel mvm;
-        public CreateNewInspection()
+        public CreateNewInspectionView()
         {
             InitializeComponent();
         }
-
-      
-
-        //private void SaveInspection_Click(object sender, RoutedEventArgs e)
-        //{
-        //    DialogResult = true;
-        //}
     }
 }

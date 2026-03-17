@@ -1,4 +1,6 @@
-﻿using Dashboard.Views;
+﻿using Dashboard.Stores;
+using Dashboard.ViewModels;
+using Dashboard.Views;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -8,7 +10,7 @@ namespace Dashboard.Commands
 {
     public class CreateInspectionCommand : ICommand
     {
-
+        private readonly NavigationStore _navigationStore;
         public event EventHandler? CanExecuteChanged;
 
         public bool CanExecute(object? parameter)
@@ -18,7 +20,12 @@ namespace Dashboard.Commands
 
         public void Execute(object? parameter)
         {
-            CreateNewInspection createNewInspection = new CreateNewInspection();
+            CreateNewInspectionViewModel viewModel = new CreateNewInspectionViewModel(_navigationStore);
+            
+            CreateNewInspectionView createNewInspection = new CreateNewInspectionView
+            {
+                DataContext = viewModel
+            };
             createNewInspection.Show();
         }
     }

@@ -12,13 +12,13 @@ namespace Dashboard.Models
 {
     public class InspectionRepo : DatabaseConnector
     {
- 
+
         private List<Inspection> inspections;
 
         public InspectionRepo()
         {
-           inspections = new List<Inspection>();
-         
+            inspections = new List<Inspection>();
+            InspecGetAll();
         }
 
         public void InspecAdd(Inspection inspection)
@@ -28,13 +28,13 @@ namespace Dashboard.Models
                 connection.Open();
 
                 using (SqlCommand cmd = new SqlCommand("INSERT INTO Inspection " +
-                    "(Date, Milestone, MilestoneReached, Inspector)" +
-                    "VALUES (@Date, @Milestone, @MilestoneReached, @Inspector) " +
+                    "(DateOfCreation, Milestone, MilestoneReached, Inspector)" +
+                    "VALUES (@DateOfCreation, @Milestone, @MilestoneReached, @Inspector) " +
                     "SELECT @@IDENTITY", connection))
                 {
-                    cmd.Parameters.Add("@Date", SqlDbType.NVarChar).Value = DateTime.Now;
-                    cmd.Parameters.Add("@Milestone", SqlDbType.NVarChar).Value = inspection.Milestone;
-                    cmd.Parameters.Add("@MilestoneReached", SqlDbType.NVarChar).Value = inspection.MilestoneReached;
+                    cmd.Parameters.Add("@DateOfCreation", SqlDbType.DateTime).Value = inspection.Date;
+                    cmd.Parameters.Add("@Milestone", SqlDbType.Float).Value = inspection.Milestone;
+                    cmd.Parameters.Add("@MilestoneReached", SqlDbType.Bit).Value = inspection.MilestoneReached;
                     cmd.Parameters.Add("@Inspector", SqlDbType.NVarChar).Value = inspection.Inspector;
 
                     inspection.Id = Convert.ToInt32(cmd.ExecuteScalar());
@@ -43,7 +43,7 @@ namespace Dashboard.Models
             inspections.Add(inspection);
         }
 
-        /*
+
         public List<Inspection> InspecGetAll()
         {
             List<Inspection> inspections = new List<Inspection>();
@@ -62,7 +62,7 @@ namespace Dashboard.Models
                         {
                             Id = reader.GetInt32(0),
                             Milestone = (double)reader["Milestone"],
-                            Date = (DateTime)reader["Date"],
+                            Date = (DateTime)reader["DateOfCreation"],
                             MilestoneReached = (bool)reader["MilestoneReached"],
                             Inspector = (string)reader["Inspector"]
                         };
@@ -72,7 +72,7 @@ namespace Dashboard.Models
             }
             return inspections;
         }
-        */
+
         public Inspection InspecGetById(int id)
         {
             Inspection? inspection = null;

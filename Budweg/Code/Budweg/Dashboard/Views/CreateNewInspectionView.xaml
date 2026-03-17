@@ -1,4 +1,4 @@
-﻿<Window x:Class="Dashboard.Views.CreateNewInspection"
+﻿<Window x:Class="Dashboard.Views.CreateNewInspectionView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -31,16 +31,16 @@
                 <GroupBox Header="Waste (gram)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:" />
-                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspection.Date}" />
+                    <DatePicker Background="Green" SelectedDate="{Binding Path=Inspection.Date}" />
 
                     <Label Content="Rawmaterial"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Rawmaterial}"/>
+                    <TextBox BorderBrush="Green" Text="{Binding Path=Inspection.Rawmaterial}"/>
 
                     <Label Content="Milestone (Weight and Rawmaterial):"/>
-                        <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Milestone}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=Inspection.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspection.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=Inspection.MilestoneReached}" />
 
                         <!--<Label Content="Inspector:"/>
                     <TextBox BorderBrush="Green" Text="{Binding Path=Waste.Inspector}" />-->
@@ -68,22 +68,22 @@
                 <GroupBox Header="Energi (Watt)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:"/>
-                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspection.Date}" />
+                    <DatePicker Background="Green" SelectedDate="{Binding Path=Inspection.Date}" />
 
                         <Label Content="Milestone:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Milestone}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=Inspection.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspection.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=Inspection.MilestoneReached}" />
 
                         <Label Content="Inspector:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Inspector}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=Inspection.Inspector}" />
                     </StackPanel>
                 </GroupBox>
 
 
 
-            <Button Background="Green" Content="Save Inspection" Height="40" Width="120" HorizontalAlignment="Center" Command="{Binding SaveInspectionCommand}"/>
+            <Button Background="Green" Content="Save Inspection" Height="40" Width="120" HorizontalAlignment="Center" Command="{Binding SaveInspectionCommand}" CommandParameter="{Binding}" />
             </StackPanel>
         </ScrollViewer>
   

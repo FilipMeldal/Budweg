@@ -11,7 +11,6 @@ namespace Dashboard.Commands
 {
     public class SaveInspectionCommand : ICommand
     {
-        private MainViewModel mvm;
 
         public event EventHandler? CanExecuteChanged;
 
@@ -22,7 +21,15 @@ namespace Dashboard.Commands
 
         public void Execute(object? parameter) //Object fordi det kan have alle datatyper. Det er den parameter som bliver sendt fra UI'et
         {
-            MessageBox.Show("Test");
+            if (parameter is CreateNewInspectionViewModel vm)
+            {
+                Inspection inspection = vm.Inspection;
+
+                InspectionRepo repo = new InspectionRepo();
+                repo.InspecAdd(inspection);
+
+                MessageBox.Show("Saved!");
+            }
         }
     }
 }

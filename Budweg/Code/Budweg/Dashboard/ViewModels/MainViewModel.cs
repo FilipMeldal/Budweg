@@ -16,7 +16,6 @@ namespace Dashboard.ViewModels
         public ObservableCollection<InspectionViewModel> InspectionVM; //laver en ny liste af inspections med værdierne fra InspectionViewModel
         public ObservableCollection<Co2ViewModel> Co2VM;
         private Co2Repo _co2Repo;
-        private InspectionRepo _inspectionRepo;
 
         private InspectionViewModel selectedInspection;
 
@@ -30,11 +29,6 @@ namespace Dashboard.ViewModels
             }
         }
 
-
-        //private EnergyRepo _energyRepo;
-        //private WasteRepo _wasteRepo;
-        //private BrakeCaliperRepo _brakeRepo;
-
         private readonly NavigationStore _navigationStore;
         public BaseViewModel CurrentViewModel { get => _navigationStore.CurrentViewModel; }
 
@@ -42,6 +36,7 @@ namespace Dashboard.ViewModels
         {
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            InspectionRepo _inspectionRepo = new InspectionRepo();
         }
 
         private void OnCurrentViewModelChanged()
