@@ -18,15 +18,9 @@ namespace Dashboard
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel mvm;
         public MainWindow()
         {
             InitializeComponent();
-        }
-
-        private void CreateInspectionDialog_Click(object sender, RoutedEventArgs e)
-        {
-            
         }
     }
 }
