@@ -14,7 +14,7 @@
                 <GroupBox  Header="CO₂ emission (gram)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:"/>
-                    <DatePicker Background="Green" SelectedDate="{Binding Path=CO2.Date}" />
+                    <DatePicker Background="Green" SelectedDate="{Binding Path=Inspection.Date}" />
 
                         <Label Content="Milestone:"/>
                     <TextBox BorderBrush="Green" Text="{Binding Path=CO2.Milestone}" />

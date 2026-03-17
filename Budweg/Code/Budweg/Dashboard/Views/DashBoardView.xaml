@@ -214,9 +214,8 @@
                     Background="DarkGreen"
                     Foreground="White"
                     FontWeight="Bold"
-                    HorizontalAlignment="Center" Click="CreateInspectionDialog_Click"
-                    Command="{Binding CreateInspectionCommand}"
-                    CommandParameter="{Binding}">
+                    HorizontalAlignment="Center"
+                    Command="{Binding CreateInspectionCommand}" Click="Button_Click">
             </Button>
         </Grid>
     </Grid>
