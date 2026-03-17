@@ -43,6 +43,7 @@ namespace Dashboard.Models
             inspections.Add(inspection);
         }
 
+        /*
         public List<Inspection> InspecGetAll()
         {
             List<Inspection> inspections = new List<Inspection>();
@@ -60,8 +61,8 @@ namespace Dashboard.Models
                         Inspection inspection = new Inspection()
                         {
                             Id = reader.GetInt32(0),
-                            Date = (DateTime)reader["Date"],
                             Milestone = (double)reader["Milestone"],
+                            Date = (DateTime)reader["Date"],
                             MilestoneReached = (bool)reader["MilestoneReached"],
                             Inspector = (string)reader["Inspector"]
                         };
@@ -71,7 +72,7 @@ namespace Dashboard.Models
             }
             return inspections;
         }
-
+        */
         public Inspection InspecGetById(int id)
         {
             Inspection? inspection = null;

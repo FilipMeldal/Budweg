@@ -14,16 +14,16 @@
                 <GroupBox  Header="CO₂ emission (gram)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:"/>
-                    <DatePicker Background="Green" SelectedDate="{Binding Path=inspectionVM.Date}" />
+                    <DatePicker Background="Green" SelectedDate="{Binding Path=inspection.Date}" />
 
                         <Label Content="Milestone:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Milestone}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspectionVM.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspection.MilestoneReached}" />
 
                         <!--<Label Content="Inspector:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Inspector}" />-->
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Inspector}" />-->
                     </StackPanel>
                 </GroupBox>
 
@@ -31,16 +31,16 @@
                 <GroupBox Header="Waste (gram)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:" />
-                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspectionVM.Date}" />
+                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspection.Date}" />
 
                     <Label Content="Rawmaterial"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Rawmaterial}"/>
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Rawmaterial}"/>
 
                     <Label Content="Milestone (Weight and Rawmaterial):"/>
-                        <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Milestone}" />
+                        <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspectionVM.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspection.MilestoneReached}" />
 
                         <!--<Label Content="Inspector:"/>
                     <TextBox BorderBrush="Green" Text="{Binding Path=Waste.Inspector}" />-->
@@ -68,22 +68,22 @@
                 <GroupBox Header="Energi (Watt)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:"/>
-                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspectionVM.Date}" />
+                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspection.Date}" />
 
                         <Label Content="Milestone:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Milestone}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspectionVM.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspection.MilestoneReached}" />
 
                         <Label Content="Inspector:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Inspector}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Inspector}" />
                     </StackPanel>
                 </GroupBox>
 
 
 
-            <Button Background="Green" Content="Save Inspection" Height="40" Width="120" HorizontalAlignment="Center" Command="{Binding SaveInspectionCommand}" />
+            <Button Background="Green" Content="Save Inspection" Height="40" Width="120" HorizontalAlignment="Center" Command="{Binding SaveInspectionCommand}"/>
             </StackPanel>
         </ScrollViewer>
   
