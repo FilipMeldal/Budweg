@@ -80,10 +80,10 @@
                     <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Inspector}" />
                     </StackPanel>
                 </GroupBox>
-                
-                
 
-                <Button Background="Green" Content="Save Inspection" Height="40" Width="120" HorizontalAlignment="Center" Click="SaveInspection_Click"/>
+
+
+            <Button Background="Green" Content="Save Inspection" Height="40" Width="120" HorizontalAlignment="Center" Command="{Binding SaveInspectionCommand}" />
             </StackPanel>
         </ScrollViewer>
   

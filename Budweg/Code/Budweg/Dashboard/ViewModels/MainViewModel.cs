@@ -11,14 +11,22 @@ using System.Windows.Input;
 
 namespace Dashboard.ViewModels
 {
-    public class MainViewModel : DatabaseConnector, INotifyPropertyChanged
+    public class MainViewModel : BaseViewModel, INotifyPropertyChanged
     {
         //private EnergyRepo _energyRepo;
         //private WasteRepo _wasteRepo;
         //private BrakeCaliperRepo _brakeRepo;
         
+            private readonly NavigationStore _navigationStore;
+            public BaseViewModel CurrentViewModel { get => _navigationStore.CurrentViewModel; }
 
-        public ObservableCollection<InspectionViewModel> InspectionVM; //laver en ny liste af inspections med værdierne fra InspectionViewModel
+            public MainViewModel(NavigationStore navigationStore)
+            {
+                _navigationStore = navigationStore;
+                _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
+            }
+
+            public ObservableCollection<InspectionViewModel> InspectionVM; //laver en ny liste af inspections med værdierne fra InspectionViewModel
         public ObservableCollection<Co2ViewModel> Co2VM;
         private Co2Repo _co2Repo;
         private InspectionRepo _inspectionRepo;
@@ -39,9 +47,9 @@ namespace Dashboard.ViewModels
             }
         }
 
-        public event PropertyChangedEventHandler? PropertyChanged;
-        protected void OnPropertyChanged([CallerMemberName] string? connectionString = null) //[callermembername] er en indbygget metode som er synonym for ethvert property som kan være inputs værdi og at det kan være og som standard er null
-                => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(connectionString)); //Lambda expression som laver en ny instans med det nye property name. Her eksekveres metoden 
+        //public event PropertyChangedEventHandler? PropertyChanged; FLYTTET IND I BASEVIEWMODEL
+        //protected void OnPropertyChanged([CallerMemberName] string? connectionString = null) //[callermembername] er en indbygget metode som er synonym for ethvert property som kan være inputs værdi og at det kan være og som standard er null
+        //        => PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(connectionString)); //Lambda expression som laver en ny instans med det nye property name. Her eksekveres metoden 
 
 
 
@@ -79,7 +87,6 @@ namespace Dashboard.ViewModels
             _inspectionRepo.InspecAdd(inspection);
         }
 
-        
         
 
 

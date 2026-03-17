@@ -18,7 +18,7 @@ namespace Dashboard
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel mvm;
+        
         public MainWindow()
         {
             InitializeComponent();

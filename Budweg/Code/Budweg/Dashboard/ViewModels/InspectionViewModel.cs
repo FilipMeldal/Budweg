@@ -1,7 +1,8 @@
-﻿using System;
+﻿using Dashboard.Commands;
+using Dashboard.Models;
+using System;
 using System.Collections.Generic;
 using System.Text;
-using Dashboard.Models;
 
 namespace Dashboard.ViewModels
 {
@@ -19,9 +20,11 @@ namespace Dashboard.ViewModels
         public InspectionViewModel(Inspection inspection)
         {
             _inspection = inspection;
+            //SaveInspectionCommand SVC = new SaveInspectionCommand();
+
         }
 
-
+        
 
     }
 }

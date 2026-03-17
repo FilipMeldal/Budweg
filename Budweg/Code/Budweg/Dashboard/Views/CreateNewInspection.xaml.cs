@@ -26,9 +26,9 @@ namespace Dashboard.Views
 
       
 
-        private void SaveInspection_Click(object sender, RoutedEventArgs e)
-        {
-            DialogResult = true;
-        }
+        //private void SaveInspection_Click(object sender, RoutedEventArgs e)
+        //{
+        //    DialogResult = true;
+        //}
     }
 }
