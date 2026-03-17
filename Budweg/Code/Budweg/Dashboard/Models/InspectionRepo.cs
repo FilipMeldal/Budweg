@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlTypes;
+using System.IO.Enumeration;
 using System.Reflection.PortableExecutable;
 using System.Runtime.ConstrainedExecution;
 using System.Text;
@@ -11,11 +12,13 @@ namespace Dashboard.Models
 {
     public class InspectionRepo : DatabaseConnector
     {
+ 
         private List<Inspection> inspections;
 
         public InspectionRepo()
         {
-            inspections = new List<Inspection>();
+           inspections = new List<Inspection>();
+         
         }
 
         public void InspecAdd(Inspection inspection)
@@ -113,5 +116,8 @@ namespace Dashboard.Models
                 cmd.ExecuteNonQuery();
             }
         }
+
+
+
     }
 }

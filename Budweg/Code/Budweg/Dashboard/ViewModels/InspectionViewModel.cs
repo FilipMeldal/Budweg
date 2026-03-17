@@ -20,5 +20,8 @@ namespace Dashboard.ViewModels
         {
             _inspection = inspection;
         }
+
+
+
     }
 }

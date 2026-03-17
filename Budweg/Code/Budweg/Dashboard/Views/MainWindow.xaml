@@ -98,7 +98,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Content="Create Milestone"
+            <Button Content="Create Inspection"
                     Height="75"
                     Width="150"
                     Margin="0,25,0,0"
@@ -106,7 +106,9 @@
                     Background="DarkGreen"
                     Foreground="White"
                     FontWeight="Bold"
-                    HorizontalAlignment="Center" Click="CreateInspectionDialog_Click">
+                    HorizontalAlignment="Center" Click="CreateInspectionDialog_Click"
+                    Command="{Binding CreateInspectionCommand}"
+                    CommandParameter="{Binding}">
             </Button>
         </Grid>
     </Grid>
