@@ -14,13 +14,13 @@
                 <GroupBox  Header="CO₂ emission (gram)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:"/>
-                    <DatePicker Background="Green" SelectedDate="{Binding Path=inspection.Date}" />
+                    <DatePicker Background="Green" SelectedDate="{Binding Path=Inspection.Date}" />
 
                         <Label Content="Milestone:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Milestone}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=Inspection.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspection.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=Inspection.MilestoneReached}" />
 
                         <!--<Label Content="Inspector:"/>
                     <TextBox BorderBrush="Green" Text="{Binding Path=inspection.Inspector}" />-->

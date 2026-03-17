@@ -19,8 +19,6 @@ namespace Dashboard.ViewModels
         private InspectionRepo _inspectionRepo;
 
         private InspectionViewModel selectedInspection;
-        public ICommand SaveInspectionCommand { get; }
-
 
         public InspectionViewModel SelectedInspection
         {
@@ -30,14 +28,6 @@ namespace Dashboard.ViewModels
                 selectedInspection = value;
                 OnPropertyChanged("SelectedInspection"); //hvilken inspection som skal vises i UI, dvs. om det er for 30 dage eller 7 dage
             }
-        }
-
-
-        private readonly Inspection _inspection;
-        public Inspection Inspection
-        {
-            get => Inspection;
-            set { Inspection = value; OnPropertyChanged(); }
         }
 
 
@@ -52,10 +42,7 @@ namespace Dashboard.ViewModels
         {
             _navigationStore = navigationStore;
             _navigationStore.CurrentViewModelChanged += OnCurrentViewModelChanged;
-
-            _inspectionRepo = new InspectionRepo(); //ny instans af inspectionRepo
         }
-
 
         private void OnCurrentViewModelChanged()
         {
