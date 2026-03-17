@@ -24,6 +24,11 @@ namespace Dashboard.ViewModels
         private InspectionRepo _inspectionRepo;
 
         private InspectionViewModel selectedInspection;
+
+
+
+
+
         public InspectionViewModel SelectedInspection
         { 
             get { return selectedInspection; }

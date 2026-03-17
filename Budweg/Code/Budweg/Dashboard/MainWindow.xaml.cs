@@ -18,12 +18,12 @@ namespace Dashboard
     /// </summary>
     public partial class MainWindow : Window
     {
-        MainViewModel mvm;
+        //MainViewModel mvm;
         public MainWindow()
         {
-            mvm = new MainViewModel();
+            //mvm = new MainViewModel();
             InitializeComponent();
-            DataContext = mvm;
+           // DataContext = mvm;
         }
 
         private void CreateInspectionDialog_Click(object sender, RoutedEventArgs e)

@@ -14,16 +14,16 @@
                 <GroupBox  Header="CO₂ emission (gram)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:"/>
-                    <DatePicker Background="Green" SelectedDate="{Binding Path=Inspection.Date}" />
+                    <DatePicker Background="Green" SelectedDate="{Binding Path=inspectionVM.Date}" />
 
                         <Label Content="Milestone:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=CO2.Milestone}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=CO2.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspectionVM.MilestoneReached}" />
 
-                        <Label Content="Inspector:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=CO2.Inspector}" />
+                        <!--<Label Content="Inspector:"/>
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Inspector}" />-->
                     </StackPanel>
                 </GroupBox>
 
@@ -31,19 +31,19 @@
                 <GroupBox Header="Waste (gram)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:" />
-                        <DatePicker Background="Green" SelectedDate="{Binding Path=Waste.Date}" />
+                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspectionVM.Date}" />
 
                     <Label Content="Rawmaterial"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=Waste.Rawmaterial}"/>
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Rawmaterial}"/>
 
                     <Label Content="Milestone (Weight and Rawmaterial):"/>
-                        <TextBox BorderBrush="Green" Text="{Binding Path=Waste.Milestone}" />
+                        <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=Waste.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspectionVM.MilestoneReached}" />
 
-                        <Label Content="Inspector:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=Waste.Inspector}" />
+                        <!--<Label Content="Inspector:"/>
+                    <TextBox BorderBrush="Green" Text="{Binding Path=Waste.Inspector}" />-->
                     </StackPanel>
                 </GroupBox>
 
@@ -68,16 +68,16 @@
                 <GroupBox Header="Energi (Watt)" Margin="0 10 0 10">
                     <StackPanel Margin="10">
                         <Label Content="Dato:"/>
-                        <DatePicker Background="Green" SelectedDate="{Binding Path=Energy.Date}" />
+                        <DatePicker Background="Green" SelectedDate="{Binding Path=inspectionVM.Date}" />
 
                         <Label Content="Milestone:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=Energy.Milestone}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Milestone}" />
 
                         <Label Content="Milestone Reached:"/>
-                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=Energy.MilestoneReached}" />
+                    <CheckBox BorderBrush="Green" IsChecked="{Binding Path=inspectionVM.MilestoneReached}" />
 
                         <Label Content="Inspector:"/>
-                    <TextBox BorderBrush="Green" Text="{Binding Path=Energy.Inspector}" />
+                    <TextBox BorderBrush="Green" Text="{Binding Path=inspectionVM.Inspector}" />
                     </StackPanel>
                 </GroupBox>
                 
