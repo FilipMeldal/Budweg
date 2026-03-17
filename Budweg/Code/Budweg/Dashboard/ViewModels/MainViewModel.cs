@@ -1,5 +1,6 @@
 ﻿using Dashboard.Commands;
 using Dashboard.Models;
+using Dashboard.Stores;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -77,5 +78,9 @@ namespace Dashboard.ViewModels
         
 
 
+        private void OnCurrentViewModelChanged()
+        {
+            OnPropertyChanged(nameof(CurrentViewModel));
+        }
     }
 }
